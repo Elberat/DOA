@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Network</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link href="./font/style.css" rel="stylesheet" type="text/css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PFT14ERN3C"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-PFT14ERN3C'); </script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 80px;
+        }
+
+        .left__left,
+        .right__right {
+            width: 49%;
+        }
+
+        .img-hover-zoom {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .img-hover-zoom img {
+            transition: transform .5s ease;
+        }
+
+        .img-hover-zoom:hover img {
+            transform: scale(1.1);
+        }
+
+        .m1 {
+            margin: 0 50px 0 100px;
+        }
+
+        .m2 {
+            margin: 0 100px 0 50px;
+        }
+
+        @media (max-width: 1024px) {
+            .wrapper {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .reverse {
+                flex-direction: column-reverse !important;
+            }
+
+            .left__left,
+            .right__right {
+                width: 100%;
+                padding: 10px 0;
+            }
+
+            .m1,
+            .m2 {
+                margin: 0
+            }
+
+            .main__content-title {
+                text-align: center;
+            }
+
+            .started__text {
+                width: 80%;
+                margin: auto;
+            }
+        }
+
+        .controls {
+            display: none;
+        }
+
+        .sidedock {
+            display: none;
+        }
+    </style>
+    <style>
+        .swiper-container {
+            margin-top: 50px;
+            height: 400px;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-slide {
+            width: 60%;
+        }
+
+        .main {
+            /* position: absolute; */
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .main .image,
+        .text {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .main .image img {
+            width: 100%;
+        }
+
+        .main .text {
+            background-color: rgba(245, 240, 240, 0.9);
+            top: 100%;
+            /* bottom:100%; */
+            padding: 30px 30px;
+            transition: 0.5s;
+        }
+
+        .main:hover .text {
+            top: 80%;
+            bottom: 0;
+        }
+
+        .main .text h1 {
+            color: green;
+            text-align: center;
+            /* margin: 30px 0; */
+            padding: 0 0 12px;
+            border-bottom: 2px solid black;
+        }
+
+        .main .text p {
+            margin: 30px 0;
+            color: black;
+        }
+
+        @media (max-width: 855px) {
+            .swiper-container {
+                height: 300px;
+            }
+
+            .main:hover .text {
+                top: 70%;
+                bottom: 0;
+            }
+
+            .swiper-slide {
+                width: 70%;
+            }
+        }
+
+        @media (max-width: 656px) {
+            .swiper-container {
+                height: 250px;
+            }
+
+            .text {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 446px) {
+            .main .text {
+                padding: 15px;
+                font-size: 10px;
+            }
+
+            .swiper-container {
+                height: 200px;
+            }
+
+            .main:hover .text {
+                top: 70%;
+                bottom: 0;
+            }
+
+            .text {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body onload="loadfun()">
+    <div id="preloader">
+        <div class="preloader__container">
+            <div class="part2"> <img src="./assets/main_logo.svg" alt="Logo" class="preloader__img" /> </div>
+            <div class="loader">
+                <div class="loading"> </div>
+            </div>
+        </div>
+    </div>
+    <header class="header--fixed">
+        <div class="container">
+            <nav class="navbar">
+                <div class="branding">
+                    <h2><a href="index.html" class="branding-logo"><img class="header__logo"
+                                src="./assets/main_logo.svg" alt=""></a></h2>
+                </div><label for="input-hamburger" class="hamburger "></label> <input type="checkbox"
+                    id="input-hamburger" hidden>
+                <ul class="menu">
+                    <li class="has-dropdown"> <a href="index.html" class="menu-link burger menulink1">Home <span
+                                class="arrow"></span> </a>
+                        <ul class="submenu nav_ul--active">
+                            <li><a href="./index.html#whoweare" class="menu-link">Who we are</a></li>
+                            <li><a href="./index.html#whatwedo" class="menu-link">What we do</a></li>
+                            <li><a href="./index.html#ourTeam" class="menu-link">Our team</a></li>
+                            <li><a href="./index.html#OurVision" class="menu-link">Our Vision</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown"> <a href="./network.html" class="menu-link burger menulink1">Network <span
+                                class="arrow"></span> </a>
+                        <ul class="submenu">
+                            <li><a href="./network.html#network" class="menu-link">Network</a></li>
+                            <li><a href="./network.html#Partnership" class="menu-link">Partnership </a></li>
+                            <li><a href="./network.html#Logistics" class="menu-link">Logistics</a></li>
+                            <li><a href="./network.html#Countries" class="menu-link">Countries</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown"> <a href="./product.html" class="menu-link burger menulink1">Products <span
+                                class="arrow"></span> </a>
+                        <ul class="submenu">
+                            <li><a href="./product.html" class="menu-link">Grains</a></li>
+                            <li><a href="./pulses.html" class="menu-link">Pulses</a></li>
+                            <li><a href="./oilseeds.html" class="menu-link">Oilseeds</a></li>
+                            <li><a href="./oils.html" class="menu-link">Oils</a></li>
+                            <li><a href="./animalfeed.html" class="menu-link">Animal Feed</a></li>
+                            <li><a href="./animalmeat.html" class="menu-link">Meat products</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown"> <a href="./about.html" class="menu-link burger menulink1">Sustainability
+                            <span class="arrow"></span> </a>
+                        <ul class="submenu">
+                            <li><a href="./about.html">Company Policy & responsibility</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./contacts.html" class="menu-link">Contacts</a></li>
+                </ul>
+            </nav>
+    </header>
+    <section class="bg__nav">
+        <div class="bg__nav-white">
+            <div class="container">
+                <div class="nav__container">
+                    <h1 class="nav__title" style="margin-bottom: 40px">Network</h1>
+                </div>
+            </div>
+        </div><img src="./assets/network/ded.jpg" style="height: 50vh;" alt="" class="bg__nav-img"> </div>
+    </section>
+    <section id="whoweare" class="paralax-text">
+        <div class="wrapper">
+            <div class="left__left m1">
+                <h2 class="main__content-title"> Network </h2>
+                <p class="started__text"> DOA 's agricultural network relies on close relationships with farmers and
+                    consumers to find sustainable and traceable commodities and deliver them around the world. We use
+                    our extensive facilities to store, transport and process high value-added commodities. We produce
+                    and deliver products in strict compliance with consumer requirements for quality and specifications.
+                    A broad understanding of our work gives us the trust of our clients, we biuld strong relationships
+                    with all our partners and chase to the quality of work and give confidence in the reliability to our
+                    clients. As a responsible and long-term oriented company, we continue to invest and develop our
+                    capacities to meet the demands of the modern world. </p>
+            </div>
+            <div class="right__right img-hover-zoom"> <img class="thumbnail" width="100%"
+                    src="./assets/network/network.jpg" alt="image"> </div>
+        </div>
+        </div>
+    </section>
+    <section id="" class="paralax-text">
+        <div class="wrapper reverse">
+            <div class="right__right img-hover-zoom"> <img class="thumbnail main" width="100%"
+                    src="./assets/network/partnership.jpg" alt="image"> </div>
+            <div class="left__left m2">
+                <h2 class="main__content-title"> Partnership </h2>
+                <p class="started__text"> By uniting talents, strong minds and diverse viewpoints, we continue to
+                    strengthen partnerships to reach new heights and success. We believe that only by joining forces can
+                    we achieve great things. Our company policy is to work openly with all our partners. Direct and
+                    transparent relationships allow us all to make long-term plans for the future and to calculate our
+                    capabilities. </p>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section id="whoweare" class="paralax-text">
+        <div class="wrapper">
+            <div class="left__left m1">
+                <h2 class="main__content-title"> Logistics </h2>
+                <p class="started__text"> Our extensive logistics network allows us to control our products from grower
+                    to consumer. This gives producers the assurance that the quality of their products is maintained and
+                    means consumers can have confidence in the origin, quality and delivery of the goods they buy. DOA
+                    inspects the goods from a point in the region of origin. We deliver them by road, rail or vessel to
+                    and from warehouses, processing plants and port terminals. We have more than 200 rental wagons that
+                    allow us to flexibly move large volumes of goods throughout the year. With our global ocean
+                    logistics, we manage origin and volume and offer flexible delivery options, on-time delivery and
+                    competitive pricing to meet our customers' needs efficiently and quickly. </p>
+            </div>
+            <div class="right__right img-hover-zoom"> <img class="thumbnail" width="100%"
+                    src="./assets/network/logistic.jpg" alt="image"> </div>
+        </div>
+        </div>
+    </section>
+    <div id="Countries" class="container">
+        <h2 class="started__suptitle started__suptitle1"> Countries </h2>
+    </div>
+    <div class="swiper-container">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="main">
+                        <section class="image"> <img src="./assets/network/countries/oae.jpg" alt=""> </section>
+                        <section class="text">
+                            <h1>United Arab Emirates</h1>
+                        </section>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="main">
+                        <section class="image"> <img src="./assets/network/countries/kyrgyzstan.jpg" alt=kyrgyzstan"">
+                        </section>
+                        <section class="text">
+                            <h1>Kyrgyzstan</h1>
+                        </section>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="main">
+                        <section class="image"> <img src="./assets/network/countries/kazakhstan.jpg" alt="astana">
+                        </section>
+                        <section class="text">
+                            <h1>Kazakhstan</h1>
+                        </section>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="main">
+                        <section class="image"> <img src="./assets/network/countries/ukrain.jpg" alt="kiev"> </section>
+                        <section class="text">
+                            <h1>Ukraine</h1>
+                        </section>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="main">
+                        <section class="image"> <img src="./assets/network/countries/russia.jpg" alt="moscow">
+                        </section>
+                        <section class="text">
+                            <h1>Russia</h1>
+                        </section>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="main">
+                        <section class="image"> <img src="./assets/network/countries/turkey.jpg" alt=""> </section>
+                        <section class="text">
+                            <h1>Turkey</h1>
+                        </section>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="main">
+                        <section class="image"> <img src="./assets/network/countries/yzbekistan.jpg" alt=""> </section>
+                        <section class="text">
+                            <h1>Uzbekistan</h1>
+                        </section>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="main">
+                        <section class="image"> <img src="./assets/network/countries/irak.jpg" alt=""> </section>
+                        <section class="text">
+                            <h1>Iraq</h1>
+                        </section>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="main">
+                        <section class="image"> <img src="./assets/network/countries/latvia.jpg" alt=""> </section>
+                        <section class="text">
+                            <h1>Latvija</h1>
+                        </section>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="main">
+                        <section class="image"> <img src="./assets/network/countries/azyrbaijan.jpg" alt=""> </section>
+                        <section class="text">
+                            <h1>Azerbaijan</h1>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__wrapper">
+                    <div class="footer__left"> <img src="./assets/main_logo.svg" alt="" class="footer__logo" />
+                        <div class="footer__text"> We build strong relationships and chase <br>to the quality in
+                            everything we do </div>
+                        <div class="footer__copyriting">DOA Trading DMCC ⓒ 2022 All rights reserved</div>
+                    </div>
+                    <div class="footer__right">
+                        <div class="Blog">
+                            <h2 class="footer__title">Quick links</h4>
+                                <ul class="footer__list">
+                                    <li class="footer__item"> <a href="./index.html#Who_we_are" class="footer__link">Who
+                                            we are</a> </li>
+                                    <li class="footer__item"> <a href="./index.html#Whatwedo" class="footer__link">What
+                                            we do </a> </li>
+                                    <li class="footer__item"> <a href="./product.html" class="footer__link">Products</a>
+                                    </li>
+                                    <li class="footer__item"> <a href="./network.html" class="footer__link">Network</a>
+                                    </li>
+                                </ul>
+                        </div>
+                        <div class="MNTN">
+                            <h2 class="footer__title">Contact us</h4>
+                                <ul class="footer__list">
+                                    <li class="footer__item"> Email: contacts@doaagro.com </li>
+                                    <li class="footer__item"> Office: +97144534983 </li>
+                                    <li class="footer__item"> Fax: +97144534985 </li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script>let list = document.querySelector('#listtoggle'); list.addEventListener('click', function () { this.classList.toggle('active') }); let listProducts = document.querySelector('#listtoggleProducts'); listProducts.addEventListener('click', function () { this.classList.toggle('active') }); var load = document.getElementById("preloader"); function loadfun() { load.style.display = "none"; }</script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>var swiper = new Swiper(".mySwiper", { slidesPerView: "auto", centeredSlides: true, spaceBetween: 30, speed: 2500, pagination: { el: ".swiper-pagination", clickable: true, }, mousewheel: { sensitivity: 1, EventTarget: ".swiper-wrapper" }, });</script>
+<script>var load = document.getElementById("preloader"); function loadfun() { load.style.display = "none" }</script>
+</script>
+<script src="./js/index.js"></script>
+
+</html>

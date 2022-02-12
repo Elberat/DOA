@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="./font/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PFT14ERN3C"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-PFT14ERN3C'); </script>
+    <title>Doa</title>
+    <style>
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 80px;
+        }
+
+        .left__left,
+        .right__right {
+            width: 49%;
+        }
+
+        .img-hover-zoom {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .img-hover-zoom img {
+            transition: transform .5s ease;
+        }
+
+        .img-hover-zoom:hover img {
+            transform: scale(1.1);
+        }
+
+        .m1 {
+            margin: 0 50px 0 100px;
+        }
+
+        .m2 {
+            margin: 0 100px 0 50px;
+        }
+
+        @media (max-width: 1024px) {
+            .wrapper {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .volume__button {
+                bottom: 140px;
+            }
+
+            .reverse {
+                flex-direction: column-reverse !important;
+            }
+
+            .left__left,
+            .right__right {
+                width: 100%;
+                padding: 10px 0;
+            }
+
+            .m1,
+            .m2 {
+                margin: 0
+            }
+
+            .main__content-title {
+                text-align: center;
+            }
+
+            .started__text {
+                width: 80%;
+                margin: auto;
+            }
+        }
+
+        .controls {
+            display: none;
+        }
+
+        .sidedock {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .volume__button {
+                bottom: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body onload="loadfun()">
+    <div id="preloader">
+        <div class="preloader__container">
+            <div class="part2"> <img src="./assets/main_logo.svg" alt="Logo" class="preloader__img" /> </div>
+            <div class="loader">
+                <div class="loading"></div>
+            </div>
+        </div>
+    </div>
+    <header class="header fixed">
+        <div class="container">
+            <nav class="navbar">
+                <div class="branding">
+                    <h2><a href="index.html" class="branding-logo"><img class="header__logo"
+                                src="./assets/main_logo.svg" alt=""></a></h2>
+                </div><label for="input-hamburger" class="hamburger "></label> <input type="checkbox"
+                    id="input-hamburger" hidden>
+                <ul class="menu">
+                    <li class="has-dropdown"> <a href="index.html" class="menu-link burger menulink1">Home <span
+                                class="arrow"></span> </a>
+                        <ul class="submenu nav_ul--active">
+                            <li><a href="./index.html#whoweare" class="menu-link">Who we are</a></li>
+                            <li><a href="./index.html#whatwedo" class="menu-link">What we do</a></li>
+                            <li><a href="./index.html#ourTeam" class="menu-link">Our team</a></li>
+                            <li><a href="./index.html#OurVision" class="menu-link">Our Vision</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown"> <a href="./network.html" class="menu-link burger menulink1">Network <span
+                                class="arrow"></span> </a>
+                        <ul class="submenu">
+                            <li><a href="./network.html#network" class="menu-link">Network</a></li>
+                            <li><a href="./network.html#Partnership" class="menu-link">Partnership</a></li>
+                            <li><a href="./network.html#Logistics" class="menu-link">Logistics</a></li>
+                            <li><a href="./network.html#Countries" class="menu-link">Countries</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown"> <a href="./product.html" class="menu-link burger menulink1">Products <span
+                                class="arrow"></span> </a>
+                        <ul class="submenu">
+                            <li><a href="./product.html" class="menu-link">Grains</a></li>
+                            <li><a href="./pulses.html" class="menu-link">Pulses</a></li>
+                            <li><a href="./oilseeds.html" class="menu-link">Oilseeds</a></li>
+                            <li><a href="./oils.html" class="menu-link">Oils</a></li>
+                            <li><a href="./animalfeed.html" class="menu-link">Animal Feed</a></li>
+                            <li><a href="./animalmeat.html" class="menu-link">Meat products</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown"> <a href="./about.html" class="menu-link burger menulink1">Sustainability
+                            <span class="arrow"></span> </a>
+                        <ul class="submenu">
+                            <li><a href="./about.html">Company Policy & responsibility</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./contacts.html" class="menu-link">Contacts</a></li>
+                </ul>
+            </nav>
+    </header>
+    <div style="padding:56.25% 0 0 0;position:relative;"><iframe
+            src="https://player.vimeo.com/video/676374737?background=1?autoplay=&amp;loop=1&amp;?muted=1&amp;autopause=0&h=eb2a9a7f00&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;" title="DOA Trading DMCC.mp4"></iframe></div>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <div class="volume__button">
+        <div class="video_active" id="silent" onclick="playMusic()"> <img class="volume__img" width="25px"
+                src="./assets/icons/silent1.png" alt="volume" /> </div>
+        <div class="video_hide" id="volume" onclick="stopMusic()"> <img class="volume__img" width="25px"
+                src="./assets/icons/volume-up1.png" alt="volume" /> </div>
+    </div>
+    <section class="cookie">
+        <div class="txt">
+            <p class=""> We use cookies to improve <br /> your experience on our site <br /> <a class="cookie_href"
+                    href="cookie.html">Read our Cookies Policy</a> </p>
+        </div>
+        <div class="btn-accept-wrapper"> <a class="btn accept">Accept</a> </div>
+    </section>
+    <section id="whoweare" class="paralax-text">
+        <div class="wrapper">
+            <div class="left__left m1">
+                <h2 class="main__content-title"> Who we are </h2>
+                <p class="started__text"> DOA Trading DMCC is one of the leading agricultural network operators in the
+                    region with a global presence and the ability to provide the best solutions for exporters and
+                    consumers. We connect continents and make food safer, procurable, and traceable. Together with our
+                    experienced team, trusted partners, and diverse capabilities, we provide our customers with advanced
+                    results that add value to our supply chains. We are constantly developing our network and investing
+                    in quality improvements to achieve further goals. </p>
+            </div>
+            <div class="right__right img-hover-zoom"> <img class="thumbnail" width="100%"
+                    src="./assets/Main/who_we_are.jpg" alt="image"> </div>
+        </div>
+        </div>
+    </section>
+    <section id="whatwedo" class="paralax-text">
+        <div class="wrapper reverse">
+            <div class="right__right img-hover-zoom"> <img class="thumbnail main" width="100%"
+                    src="./assets/Main/What_we_do.jpg" alt="image"> </div>
+            <div class="left__left m2">
+                <h2 class="main__content-title"> What we do </h2>
+                <p class="started__text"> We always try to find the shortest routes to deliver high quality products to
+                    our customers, who are manufacturers, processors, local importers, and governments. The developed
+                    network of companies led by DOA covers more than 10 countries around the world and supplies about 2
+                    million tons of products to more than 50 countries around the world. </p>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="green_items">
+        <div class="container">
+            <div class="items__wrapper">
+                <div class="green_item"><img class="green_items_img" src="./assets/icons/statistic1.png" alt="">
+                    <p style="margin-left: 15px;" class="green_items_text">2 million <br>metric tons <br>annually</p>
+                </div>
+                <div class="green_border" style="border-right: 5px solid white;"></div>
+                <div class="green_item"><img class="green_items_img" src="./assets/icons/earth.png" alt="">
+                    <p class="green_items_text">10 countries</p>
+                </div>
+                <div class="green_border" style="border-right: 5px solid white;"></div>
+                <div class="green_item"><img class="green_items_img" src="./assets/icons/distination.png" alt="">
+                    <p class="green_items_text">50 destination <br>countries</p>
+                </div>
+                <div class="green_border" style="border-right: 5px solid white;"></div>
+                <div class="green_item"><img style="margin-right: 0;" class="green_items_img"
+                        src="./assets/icons/people.png" alt="">
+                    <p class="green_items_text">25 years of <br>experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="ourTeam" class="paralax-text">
+        <div class="wrapper">
+            <div class="left__left m1">
+                <h2 class="main__content-title"> Our team </h2>
+                <p class="started__text"> We believe in people Our team is made up of professionals in their field, and
+                    we are always interested in people to oversee their work. This means we can always trust each other
+                    and give each person a chance. Thanks to the many opportunities offered by our network, our
+                    employees are always discovering new ways and innovative solutions that allow them to work in a
+                    pleasant way and meet all our clients' needs. </p>
+            </div>
+            <div class="right__right img-hover-zoom"> <img class="thumbnail" width="100%"" src="
+                    ./assets/Main/Our_team.jpg" alt="image"> </div>
+        </div>
+        </div>
+    </section>
+    <section id="OurVision" class="paralax-text">
+        <div class="wrapper reverse">
+            <div class="right__right img-hover-zoom"> <img class="thumbnail" width="100%"
+                    src="./assets/Main/Our__vision.jpg" alt="image"> </div>
+            <div class="left__left m2">
+                <h2 class="main__content-title"> Our vision </h2>
+                <p class="started__text"> The world is constantly evolving and we try to keep up with it, to expand and
+                    find all the points where we can become better than we are. We are fully aware of the responsibility
+                    we bear and will try to meet all the needs of today and maintain the highest quality standards of
+                    nutrition for ourselves and our animals. </p>
+            </div>
+        </div>
+        </div>
+    </section>
+    <div class="container">
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__wrapper">
+                    <div class="footer__left"> <img src="./assets/main_logo.svg" alt="" class="footer__logo" />
+                        <div class="footer__text"> We build strong relationships and chase <br>to the quality in
+                            everything we do </div>
+                        <div class="footer__copyriting">DOA Trading DMCC ⓒ 2022 All rights reserved</div>
+                    </div>
+                    <div class="footer__right">
+                        <div class="Blog">
+                            <h2 class="footer__title">Quick links</h4>
+                                <ul class="footer__list">
+                                    <li class="footer__item"> <a href="./index.html#whatweare" class="footer__link">Who
+                                            we are</a> </li>
+                                    <li class="footer__item"> <a href="./index.html#whatwedo" class="footer__link">What
+                                            we do </a> </li>
+                                    <li class="footer__item"> <a href="./product.html" class="footer__link">Products</a>
+                                    </li>
+                                    <li class="footer__item"> <a href="./network.html" class="footer__link">Network</a>
+                                    </li>
+                                </ul>
+                        </div>
+                        <div class="MNTN">
+                            <h2 class="footer__title">Contact us</h4>
+                                <ul class="footer__list">
+                                    <li class="footer__item"> Email: contacts@doaagro.com </li>
+                                    <li class="footer__item"> Office: +971 4 453 4985 </li>
+                                    <li class="footer__item"> Fax: +971 4 453 4987 </li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="./js/index.js"></script>
+    <script></script>
+    <script>var load = document.getElementById("preloader"); function loadfun() { load.style.display = "none" }</script>
+    <script>let element = document.querySelector(".cookie"), accept = document.querySelector(".accept"); var music = new Audio("./500953_full.wav"); let volume = document.getElementById("volume"), silent = document.getElementById("silent"); function stopMusic() { music.pause(), silent.classList.add("video_active"), silent.classList.remove("video_hide"), volume.classList.add("video_hide"), volume.classList.remove("video_active") } function playMusic() { music.play(), silent.classList.add("video_hide"), silent.classList.remove("video_active"), volume.classList.add("video_active"), volume.classList.remove("video_hide") } function getCookie() { return document.cookie.split("; ").reduce((e, o) => { var [i, o] = o.split("="); return { ...e, [i]: o } }, {}) } function checkCookie() { cookie = getCookie(), console.log(cookie.doa), "true" === cookie.doa && element.classList.add("hide") } accept.onclick = function () { element.classList.add("hide"), document.cookie = "doa=true" }, document.addEventListener("DOMContentLoaded", checkCookie()); </script>
+</body>
+
+</html>

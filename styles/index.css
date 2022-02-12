@@ -1,0 +1,10 @@
+@import "./header.css";
+@import "./started.css";
+@import "./footer.css";
+@import "./network.css";
+@import "./about.css";
+@import "./frozen.css";
+@import "./cookies.css";
+@import "./slider.css";
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:"GT Walsheim Pro",sans-serif}h1,h2{color:#86b85c!important}.green{color:#86b85c!important}.container{max-width:960px;margin:auto;width:100%}@media (max-width:1200px){.container{padding:0 15px}}body{overflow-x:hidden;background-color:#4f4f4f}.footer{background-color:#4f4f4f}a{text-decoration:none}li{list-style:none}.text{color:#ffff}.footer__logo{height:80px;width:140px}.preloader__img{width:160px}.header__logo{width:100px;height:40px}

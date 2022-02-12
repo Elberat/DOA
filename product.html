@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="./font/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./styles/products.css" />
+    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
+    <link rel="stylesheet/less" type="text/css" href="styles.less" />
+    <link rel="stylesheet" href="./styles/started.css">
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>Product</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PFT14ERN3C"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-PFT14ERN3C'); </script>
+    <style>
+        .containerr {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .space-holder {
+            position: relative;
+            width: 100%;
+        }
+
+        .sticky {
+            position: sticky;
+            top: 0;
+            height: 80vh;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .horizontal {
+            position: absolute;
+            height: 100%;
+            will-change: transform;
+        }
+
+        .cards {
+            position: relative;
+            height: 100%;
+            padding: 0 0 0 40vw;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .cards:last-child {
+            margin-right: 12vw;
+        }
+
+        .sample-card {
+            position: relative;
+            height: 320px;
+            width: 320px;
+            margin-right: 75px;
+            flex-shrink: 0;
+            transition: transform 1.3s;
+            text-align: center;
+        }
+
+        .sample-card>img {
+            width: 80%;
+        }
+
+        .sample-card>h2 {
+            margin-top: 15px;
+        }
+
+        .sample-card>p {
+            color: white;
+            margin-top: 15px;
+        }
+
+        .sample-card:hover {
+            transform: scale(1.12);
+        }
+    </style>
+</head>
+
+<body onload="loadfun()">
+    <div id="preloader">
+        <div class="preloader__container">
+            <div class="part2"> <img src="./assets/main_logo.svg" alt="Logo" class="preloader__img" /> </div>
+            <div class="loader">
+                <div class="loading"></div>
+            </div>
+        </div>
+    </div>
+    <header class="header--fixed">
+        <div class="container">
+            <nav class="navbar">
+                <div class="branding">
+                    <h2><a href="index.html" class="branding-logo"><img class="header__logo"
+                                src="./assets/main_logo.svg" alt=""></a></h2>
+                </div><label for="input-hamburger" class="hamburger "></label> <input type="checkbox"
+                    id="input-hamburger" hidden>
+                <ul class="menu">
+                    <li class="has-dropdown"> <a href="index.html" class="menu-link burger menulink1">Home <span
+                                class="arrow"></span> </a>
+                        <ul class="submenu nav_ul--active">
+                            <li><a href="./index.html#whoweare" class="menu-link">Who we are</a></li>
+                            <li><a href="./index.html#whatwedo" class="menu-link">What we do</a></li>
+                            <li><a href="./index.html#ourTeam" class="menu-link">Our team</a></li>
+                            <li><a href="./index.html#OurVision" class="menu-link">Our Vision</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown"> <a href="./network.html" class="menu-link burger menulink1">Network <span
+                                class="arrow"></span> </a>
+                        <ul class="submenu">
+                            <li><a href="./network.html#network" class="menu-link">Network</a></li>
+                            <li><a href="./network.html#Partnership" class="menu-link">Partnership</a></li>
+                            <li><a href="./network.html#Logistics" class="menu-link">Logistics</a></li>
+                            <li><a href="./network.html#Countries" class="menu-link">Countries</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown"> <a href="./product.html" class="menu-link burger menulink1">Products <span
+                                class="arrow"></span> </a>
+                        <ul class="submenu">
+                            <li><a href="./product.html" class="menu-link">Grains</a></li>
+                            <li><a href="./pulses.html" class="menu-link">Pulses</a></li>
+                            <li><a href="./oilseeds.html" class="menu-link">Oilseeds</a></li>
+                            <li><a href="./oils.html" class="menu-link">Oils</a></li>
+                            <li><a href="./animalfeed.html" class="menu-link">Animal Feed</a></li>
+                            <li><a href="./animalmeat.html" class="menu-link">Meat products</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown"> <a href="./about.html" class="menu-link burger menulink1">Sustainability
+                            <span class="arrow"></span> </a>
+                        <ul class="submenu">
+                            <li><a href="./about.html">Company Policy & responsibility</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./contacts.html" class="menu-link">Contacts</a></li>
+                </ul>
+            </nav>
+    </header>
+    <main>
+        <section class="bg__nav">
+            <div class="bg__nav-white">
+                <div class="container">
+                    <div class="nav__container">
+                        <h1 class="nav__title">Our products</h1>
+                        <ul class="nav__list">
+                            <li class="nav__list-item active"><a href="./product.html"
+                                    class="nav__list-link1">Grains</a></li>
+                            <li class="nav__list-item"><a href="./pulses.html" class="nav__list-link">Pulses</a></li>
+                            <li class="nav__list-item"><a href="./oilseeds.html" class="nav__list-link">Oil Seeds</a>
+                            </li>
+                            <li class="nav__list-item"><a href="./oils.html" class="nav__list-link">Oils</a></li>
+                            <li class="nav__list-item"><a href="./animalfeed.html" class="nav__list-link">Animal
+                                    Feed</a></li>
+                            <li class="nav__list-item"><a href="./animalmeat.html" class="nav__list-link">Meat
+                                    Products</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div><img src="./assets/products/grains/grainsBG.jpg" alt="" class="bg__nav-img"> </div>
+        </section>
+        <section class="containerr">
+            <div class="space-holder">
+                <div class="sticky">
+                    <div class="horizontal">
+                        <section role="feed" class="cards">
+                            <div class="sample-card"> <img src="./assets/products/grains/Wheat.png" alt="">
+                                <h2>Wheat</h2>
+                                <p>Origin: Black Sea,<br>Europe, South America</p>
+                            </div>
+                            <div class="sample-card"> <img src="./assets/products/grains/Barley.png" alt="">
+                                <h2>Barley</h2>
+                                <p>Origin: Black Sea,<br>Europe, South America</p>
+                            </div>
+                            <div class="sample-card"> <img src="./assets/products/grains/Rye.png" alt="">
+                                <h2>Rye</h2>
+                                <p>Origin: Black Sea,<br>Europe, South America</p>
+                            </div>
+                            <div class="sample-card"> <img src="./assets/products/grains/Maize.png" alt="">
+                                <h2>Maize</h2>
+                                <p>Origin: Black Sea,<br>Europe, South America</p>
+                            </div>
+                            <div class="sample-card"> <img src="./assets/products/grains/Rice.png" alt="">
+                                <h2>Rice</h2>
+                                <p>Origin: Europe, Brazil, India,<br>Pakistan, Egypt, Thailand, Vietnam</p>
+                                <p>Varieties: Long, Medium and Short Grain</p>
+                            </div>
+                            <div class="sample-card"> <img src="./assets/products/grains/Popcorn.png" alt="">
+                                <h2>Popcorn</h2>
+                                <p>Origin: Black Sea,<br>Europe, South America</p>
+                            </div>
+                            <div class="sample-card"> <img src="./assets/products/grains/YellowMillet.png" alt="">
+                                <h2>Yellow Millet</h2>
+                                <p>Origin: Black Sea,<br>Europe</p>
+                            </div>
+                    </div>
+        </section>
+    </main>
+    <div class="container">
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__wrapper">
+                    <div class="footer__left"> <img src="./assets/main_logo.svg" alt="" class="footer__logo" />
+                        <div class="footer__text"> We build strong relationships and chase <br>to the quality in
+                            everything we do </div>
+                        <div class="footer__copyriting">DOA Trading DMCC ⓒ 2022 All rights reserved</div>
+                    </div>
+                    <div class="footer__right">
+                        <div class="Blog">
+                            <h2 class="footer__title">Quick links</h4>
+                                <ul class="footer__list">
+                                    <li class="footer__item"> <a href="./index.html#Who_we_are" class="footer__link">Who
+                                            we are</a> </li>
+                                    <li class="footer__item"> <a href="./index.html#Whatwedo" class="footer__link">What
+                                            we do </a> </li>
+                                    <li class="footer__item"> <a href="./product.html" class="footer__link">Products</a>
+                                    </li>
+                                    <li class="footer__item"> <a href="./network.html" class="footer__link">Network</a>
+                                    </li>
+                                </ul>
+                        </div>
+                        <div class="MNTN">
+                            <h2 class="footer__title">Contact us</h4>
+                                <ul class="footer__list">
+                                    <li class="footer__item"> Email: contacts@doaagro.com </li>
+                                    <li class="footer__item"> Office: +971 4 453 4985 </li>
+                                    <li class="footer__item"> Fax: +971 4 453 4987 </li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>let list = document.querySelector('#listtoggle'); list.addEventListener('click', function () { this.classList.toggle('active') }); let listProducts = document.querySelector('#listtoggleProducts'); listProducts.addEventListener('click', function () { this.classList.toggle('active') }); </script>
+    <script>var load = document.getElementById("preloader"); function loadfun() { load.style.display = "none" }</script>
+    <script src="./js/index.js"></script>
+    <script>const spaceHolder = document.querySelector('.space-holder'); const horizontal = document.querySelector('.horizontal'); spaceHolder.style.height = `${calcDynamicHeight(horizontal)}px`; function calcDynamicHeight(ref) { const vw = window.innerWidth; const vh = window.innerHeight; const objectWidth = ref.scrollWidth; return objectWidth - vw + vh + 150; } window.addEventListener('scroll', () => { const sticky = document.querySelector('.sticky'); horizontal.style.transform = `translateX(-${sticky.offsetTop}px)`; }); window.addEventListener('resize', () => { spaceHolder.style.height = `${calcDynamicHeight(horizontal)}px`; }); </script>
+</body>
+
+</html>
